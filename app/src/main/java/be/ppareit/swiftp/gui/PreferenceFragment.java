@@ -182,7 +182,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment im
         chroot_pref.setSummary(FsSettings.getChrootDirAsString());
         chroot_pref.setOnPreferenceClickListener(preference -> {
             AlertDialog folderPicker = new FolderPickerDialogBuilder(getActivity(), FsSettings.getChrootDir())
-                    .setSelectedButton(R.string.select, path -> {
+                    .setSelectedButton(android.R.string.ok, path -> {
                         if (preference.getSummary().equals(path))
                             return;
                         if (!FsSettings.setChrootDir(path))
@@ -202,7 +202,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment im
                         preference.setSummary(path);
                         stopServer();
                     })
-                    .setNegativeButton(R.string.cancel, null)
+                    .setNegativeButton(android.R.string.cancel, null)
                     .create();
             folderPicker.show();
             return true;
@@ -342,7 +342,7 @@ public class PreferenceFragment extends android.preference.PreferenceFragment im
             updateRunningState();
             // or it might be ACTION_FAILEDTOSTART
             final TwoStatePreference runningPref = findPref("running_switch");
-            if (intent.getAction().equals(FsService.ACTION_FAILEDTOSTART)) {
+            if (FsService.ACTION_FAILEDTOSTART.equals(intent.getAction())) {
                 runningPref.setChecked(false);
                 mHandler.postDelayed(
                         () -> runningPref.setSummary(R.string.running_summary_failed),

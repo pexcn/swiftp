@@ -26,10 +26,9 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 import net.vrallev.android.cat.Cat;
 
-import lombok.val;
+import java.util.List;
 
 public class App extends Application {
-
     private static App mInstance;
 
     @Override
@@ -59,10 +58,9 @@ public class App extends Application {
 
     public static boolean isPaidVersionInstalled() {
         Context context = getAppContext();
-        val pm = context.getPackageManager();
-        val packages = pm.getInstalledApplications(0);
+        List<ApplicationInfo> packages = context.getPackageManager().getInstalledApplications(0);
         for (ApplicationInfo packageInfo : packages) {
-            if(packageInfo.packageName.equals("be.ppareit.swiftp"))
+            if (packageInfo.packageName.equals("be.ppareit.swiftp"))
                 return true;
         }
         return false;
@@ -70,7 +68,7 @@ public class App extends Application {
 
     /**
      * Get the version from the manifest.
-     * 
+     *
      * @return The version as a String.
      */
     public static String getVersion() {
@@ -84,5 +82,4 @@ public class App extends Application {
             return null;
         }
     }
-
 }

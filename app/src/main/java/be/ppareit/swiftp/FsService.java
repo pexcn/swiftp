@@ -50,7 +50,6 @@ import java.util.List;
 
 import be.ppareit.swiftp.server.SessionThread;
 import be.ppareit.swiftp.server.TcpListener;
-import lombok.val;
 
 public class FsService extends Service implements Runnable {
     private static final String TAG = FsService.class.getSimpleName();
@@ -76,7 +75,7 @@ public class FsService extends Service implements Runnable {
     public static final int WAKE_INTERVAL_MS = 1000; // milliseconds
 
     private TcpListener wifiListener = null;
-    private final List<SessionThread> sessionThreads = new ArrayList<SessionThread>();
+    private final List<SessionThread> sessionThreads = new ArrayList<>();
 
     private PowerManager.WakeLock wakeLock;
     private WifiLock wifiLock = null;
@@ -288,7 +287,7 @@ public class FsService extends Service implements Runnable {
             return null;
         }
         try {
-            val networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            ArrayList<NetworkInterface> networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
             for (NetworkInterface networkInterface : networkInterfaces) {
                 // only check network interfaces that give local connection
                 if (!networkInterface.getName().matches("^(eth|wlan).*"))
@@ -316,7 +315,7 @@ public class FsService extends Service implements Runnable {
      * @return true if connected to a local network
      */
     public static boolean isConnectedToLocalNetwork() {
-        boolean connected = false;
+        boolean connected;
         Context context = App.getAppContext();
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
@@ -325,7 +324,7 @@ public class FsService extends Service implements Runnable {
                 && (ni.getType() & (ConnectivityManager.TYPE_WIFI | ConnectivityManager.TYPE_ETHERNET)) != 0;
         if (!connected) {
             Log.d(TAG, "isConnectedToLocalNetwork: see if it is an WIFI AP");
-            WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            WifiManager wm = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             try {
                 Method method = wm.getClass().getDeclaredMethod("isWifiApEnabled");
                 connected = (Boolean) method.invoke(wm);
@@ -336,7 +335,7 @@ public class FsService extends Service implements Runnable {
         if (!connected) {
             Log.d(TAG, "isConnectedToLocalNetwork: see if it is an USB AP");
             try {
-                val networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+                ArrayList<NetworkInterface> networkInterfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
                 for (NetworkInterface netInterface : networkInterfaces) {
                     if (netInterface.getDisplayName().startsWith("rndis")) {
                         connected = true;
@@ -362,7 +361,7 @@ public class FsService extends Service implements Runnable {
         // it, we construct a list in toBeRemoved of threads to remove
         // later from the sessionThreads list.
         synchronized (this) {
-            List<SessionThread> toBeRemoved = new ArrayList<SessionThread>();
+            List<SessionThread> toBeRemoved = new ArrayList<>();
             for (SessionThread sessionThread : sessionThreads) {
                 if (!sessionThread.isAlive()) {
                     Log.d(TAG, "Cleaning up finished session...");
@@ -377,9 +376,7 @@ public class FsService extends Service implements Runnable {
                     }
                 }
             }
-            for (SessionThread removeThread : toBeRemoved) {
-                sessionThreads.remove(removeThread);
-            }
+            sessionThreads.removeAll(toBeRemoved);
 
             // Cleanup is complete. Now actually add the new thread to the list.
             sessionThreads.add(newSession);

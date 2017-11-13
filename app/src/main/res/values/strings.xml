@@ -22,8 +22,6 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 <resources>
 
     <string name="swiftp_name">FTP Server</string>
-    <string name="swiftp_name_free">FTP Server (Free)</string>
-    <string name="swiftp_name_demo">FTP Server (Demo)</string>
     <string name="running_label">FTP Server</string>
     <string name="running_summary_stopped">Toggle the state of the ftp server</string>
     <string name="running_summary_started">at %s</string>
@@ -42,7 +40,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
     </string>
     <string name="settings_label">Settings</string>
     <string name="user_label">User</string>
-    <string name="login_settings_label">Login settings...</string>
+    <string name="login_settings_label">Login settings…</string>
     <string name="username_label">Username</string>
     <string name="password_label">Password</string>
     <string name="show_password_label">Display password</string>
@@ -57,15 +55,15 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
     <string name="anonymous_label">Anonymous</string>
     <string name="allow_anonymous_label">Allow anonymous login</string>
     <string name="anonymous_summary">Anonymous logins are only allowed read access</string>
-    <string name="advanced_settings_label">Advanced settings...</string>
+    <string name="advanced_settings_label">Advanced settings…</string>
     <string name="port_number_label">Port Number</string>
     <string name="port_validation_error">The port number must be in the range 1 to 65535.</string>
     <string name="chroot_label">Stay in folder</string>
     <string name="accept_wifi_label">Accept connection from wifi</string>
     <string name="wakelock_label">Keep device awake (full CPU speed)</string>
     <string name="extra_label">Extra</string>
-    <string name="help_label">Help...</string>
-    <string name="about_label">About...</string>
+    <string name="help_label">Help…</string>
+    <string name="about_label">About…</string>
     <string name="help_dlg_title">FTP Server Help</string>
     <!--string is too long to translate, when editing, split it in logical parts, see issue #105-->
     <string name="help_dlg_message">\
@@ -74,7 +72,7 @@ information can be found at http://ppareit.github.com/swiftp/.\n\n\
 \
 This program allows you to run an ftp server on your android device. This means that any
 program can access the files on your device while the ftp server is running. For example,
-entering \'ftp://...\' in the firefox url bar will allow you to browse the files on your
+entering \'ftp://…\' in the firefox url bar will allow you to browse the files on your
 device from a desktop pc or a laptop.\n\n
 \
 By default, the user name and password are both \'ftp\', you should change them. You use
@@ -109,7 +107,7 @@ https://github.com/ppareit/swiftp/issues .\n\n
     <string name="feedback">Send feedback</string>
     <string name="about">About</string>
 
-    <string name="autoconnect_label">Autoconnect settings...</string>
+    <string name="autoconnect_label">Autoconnect settings…</string>
     <string name="autoconnect_summary">Select the wifi networks on which to autoconnect</string>
     <string name="autoconnect_error_enable_wifi_for_access_points">
         Enable wifi to get list of access points
@@ -133,7 +131,7 @@ https://github.com/ppareit/swiftp/issues .\n\n
     <!-- auto added strings by AS -->
     <string name="widget_name">FTP Server Widget</string>
     <string name="notif_settings_text">Settings</string>
-    <string name="app_copyright">Copyright 2012 - 2017</string>
+    <string name="app_copyright">Copyright 2012 – 2017</string>
     <string name="app_url" translatable="false">
         https://ppareit.github.io/swiftp/
     </string>
@@ -155,7 +153,7 @@ https://github.com/ppareit/swiftp/issues .\n\n
         Birgit Niemegeers
     </string>
 
-    <string name="app_theme">Theme...</string>
+    <string name="app_theme">Theme…</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="light_theme">Light Theme</string>
     <string name="mixed_theme">Mixed Theme</string>

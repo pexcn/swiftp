@@ -21,25 +21,26 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 <resources>
     <string name="swiftp_name">FTP Server</string>
     <string name="running_label">正在运行</string>
-    <string name="running_summary_stopped">开始 FTP server</string>
-    <string name="running_summary_started">FTP server 运行于 %s 端口</string>
-    <string name="running_summary_failed">FTP server 启动失败，您尚未连接到 Wi-Fi 或以太网络？</string>
+    <string name="running_summary_stopped">开始 FTP Server</string>
+    <string name="running_summary_started">FTP Server 运行于 %s</string>
+    <string name="running_summary_failed">FTP Server 启动失败，您尚未连接到 Wi-Fi 或以太网络？</string>
     <string name="market_version_label">市场版本</string>
     <string name="market_version_summary">欢迎使用 FTP Server Demo 版本。
         您可以通过在 Google Play 中购买 FTP Server 以支持开发者。
 		点击此处跳转至 Google Play 市场。</string>
     <string name="settings_label">设置</string>
+    <string name="user_label">用户</string>
     <string name="username_label">用户名</string>
     <string name="password_label">密码</string>
     <string name="show_password_label">显示密码</string>
-    <string name="advanced_settings_label">高级设置...</string>
+    <string name="advanced_settings_label">高级设置</string>
     <string name="port_number_label">端口号</string>
     <string name="chroot_label">设为根目录</string>
     <string name="accept_wifi_label">接受 Wi-Fi 连接</string>
     <string name="wakelock_label">保持设备唤醒（最大 CPU 频率）</string>
     <string name="extra_label">其他</string>
-    <string name="help_label">帮助...</string>
-    <string name="about_label">关于...</string>
+    <string name="help_label">帮助</string>
+    <string name="about_label">关于</string>
     <string name="help_dlg_title">FTP Server 帮助</string>
     <string name="help_dlg_message">\
 感谢您使用 FTP Server (SwiFTP)！这里有一些简要的使用说明。更多
@@ -48,7 +49,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 此项目允许您在 Android 设备中运行 FTP 服务器，这意味
 着当您开启 FTP 服务的时候任何程序均可访问您设备中的
 所有文件，例如在桌面端或笔记本的 Firefox 浏览器地址
-栏中输入 \"ftp://...\" 即可浏览您设备中的所有文件。\n\n
+栏中输入 \"ftp://…\" 即可浏览您设备中的所有文件。\n\n
 \
 在通常情况下，用户名以及密码均为 \"ftp\"，您应该在使用
 时修改它们，并且使用此用户名以及密码访问此服务器。\n\n
@@ -71,15 +72,37 @@ https://github.com/ppareit/swiftp/issues 提交您的建议。\n\n
 
     <string name="nsd_servername_postfix">FTP Server</string>
 
-    <string name="notification_server_starting">启动于 %s 端口</string>
+    <string name="notification_server_starting">启动于 %s</string>
     <string name="notification_title">FTP Server 正在运行</string>
-    <string name="notification_text">服务运行于 %s 端口</string>
+    <string name="notification_text">服务运行于 %s</string>
+    <string name="notification_stop_text">停止服务</string>
+    <string name="notif_settings_text">设置</string>
 
     <string name="running_summary_failed_to_get_ip_address">无法检索 URL</string>
     <string name="username_validation_error">用户名至少需要包括一个或更多字符，不允许为空。</string>
     <string name="password_validation_error">密码至少需要包括一个或更多字符，不允许为空。</string>
     <string name="port_validation_error">端口号必须在 1 至 65535 之间。</string>
     <string name="storage_warning">警告：当前存储暂不可用，您可能需要取消挂载。</string>
-    <string name="widget_name">FTP Server Widget</string>
+    <string name="widget_name">FTP Server 小部件</string>
+
+    <string name="login_settings_label">登录设置</string>
+    <string name="anonymous_label">匿名</string>
+    <string name="allow_anonymous_label">允许匿名登录</string>
+    <string name="anonymous_summary">匿名登录用户只允许只读访问</string>
+    <string name="app_theme">主题</string>
+    <string name="dark_theme">暗色</string>
+    <string name="light_theme">亮色</string>
+    <string name="mixed_theme">混合</string>
+
+    <string name="autoconnect_label">自动连接设置</string>
+    <string name="autoconnect_summary">选择要自动连接的 Wi-Fi 网络</string>
+    <string name="autoconnect_error_enable_wifi_for_access_points">
+        启用 Wi-Fi 以获得热点列表
+    </string>
+
+    <string name="feedback">发送反馈</string>
+    <string name="about">关于</string>
+    <string name="unable_to_start_mail_client">无法启动邮件客户端</string>
+    <string name="use_english">请使用英语！</string>
 
 </resources>
